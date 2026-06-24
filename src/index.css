@@ -1,0 +1,242 @@
+@import "tailwindcss";
+
+/* ===== Minimalist Black + Liquid Glass Theme ===== */
+
+@theme {
+  /* Sea - Accent tones (subtle, monochromatic) */
+  --color-sea-50: #0a0a0a;
+  --color-sea-100: #1a1a1a;
+  --color-sea-200: #2c2c2c;
+  --color-sea-300: #3d3d3d;
+  --color-sea-400: #6b6b6b;
+  --color-sea-500: #8a8a8a;
+  --color-sea-600: #c1c1c1;
+  --color-sea-700: #d4d4d4;
+  --color-sea-800: #e5e5e5;
+  --color-sea-900: #f0f0f0;
+  --color-sea-950: #ffffff;
+
+  /* Abyss - Primary palette (from reference image) */
+  --color-abyss-50: #000000;   /* pure black - main bg */
+  --color-abyss-100: #0a0a0a;  /* near black */
+  --color-abyss-200: #1a1a1a;  /* card bg / elevated surfaces */
+  --color-abyss-300: #2c2c2c;  /* depth, shadows, 3D elements */
+  --color-abyss-400: #3d3d3d;  /* borders, dividers */
+  --color-abyss-500: #6b6b6b;  /* button bg (Get Started) */
+  --color-abyss-600: #8a8a8a;  /* disabled / faint text */
+  --color-abyss-700: #c1c1c1;  /* sub-heading, navbar, secondary text */
+  --color-abyss-800: #d4d4d4;  /* highlighted body text */
+  --color-abyss-900: #e5e5e5;  /* emphasis text */
+  --color-abyss-950: #ffffff;  /* headings - pure white */
+
+  --color-cyan-glow: #c1c1c1;
+  --color-teal-glow: #8a8a8a;
+  --color-aqua-glow: #d4d4d4;
+
+  --color-terminal-bg: #0a0a0a;
+  --color-terminal-header: #1a1a1a;
+  --color-terminal-green: #c1c1c1;
+  --color-terminal-blue: #8a8a8a;
+  --color-terminal-purple: #6b6b6b;
+  --color-terminal-yellow: #d4d4d4;
+  --color-terminal-red: #8a8a8a;
+  --color-terminal-orange: #c1c1c1;
+  --color-terminal-text: #c1c1c1;
+  --color-terminal-comment: #3d3d3d;
+
+  /* Font families */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+
+  /* Animations */
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-glow-pulse: glow-pulse 3s ease-in-out infinite;
+  --animate-shimmer: shimmer 3s ease-in-out infinite;
+  --animate-wave: wave 8s ease-in-out infinite;
+  --animate-fade-up: fade-up 0.6s ease-out forwards;
+  --animate-scale-in: scale-in 0.5s ease-out forwards;
+  --animate-slide-right: slide-right 0.5s ease-out forwards;
+  --animate-terminal-type: terminal-type 3s steps(30) infinite;
+  --animate-blink: blink 1s step-end infinite;
+  --animate-liquid-bg: liquid-bg 20s ease-in-out infinite;
+}
+
+/* ===== Keyframes ===== */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.05); }
+  50% { box-shadow: 0 0 40px rgba(255, 255, 255, 0.1), 0 0 80px rgba(255, 255, 255, 0.03); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes wave {
+  0%, 100% { transform: translateX(0) translateY(0); }
+  25% { transform: translateX(10px) translateY(-5px); }
+  50% { transform: translateX(0) translateY(-10px); }
+  75% { transform: translateX(-10px) translateY(-5px); }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slide-right {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes terminal-type {
+  from, to { width: 0; }
+  50% { width: 100%; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes liquid-bg {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===== Base styles ===== */
+html {
+  scroll-behavior: smooth;
+  background-color: #000000;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #000000;
+  min-height: 100vh;
+  color: #c1c1c1;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Subtle ambient depth — very dark grey glow from top */
+body::before {
+  content: "";
+  position: fixed;
+  top: -30%; left: 50%; transform: translateX(-50%);
+  width: 80vw; height: 60vw;
+  background: radial-gradient(ellipse, rgba(44, 44, 44, 0.25), transparent 65%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  bottom: -30%; right: -10%; width: 60vw; height: 60vw;
+  background: radial-gradient(circle, rgba(44, 44, 44, 0.15), transparent 60%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ===== Liquid Glass utilities (David UI Style — Dark Minimalist) ===== */
+/* Toned-down glass for pure black backgrounds — subtle white reflections */
+
+.glass {
+  background: 
+    linear-gradient(to bottom right, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
+    linear-gradient(to top left, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+    rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(16px) saturate(130%);
+  -webkit-backdrop-filter: blur(16px) saturate(130%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    inset 0 1px 0px rgba(255, 255, 255, 0.15),
+    0 0 12px rgba(0, 0, 0, 0.5),
+    0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+.glass:hover {
+  background: 
+    linear-gradient(to bottom right, rgba(255, 255, 255, 0.12) 0%, transparent 50%),
+    linear-gradient(to top left, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+    rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.glass-strong {
+  background: 
+    linear-gradient(to bottom right, rgba(255, 255, 255, 0.12) 0%, transparent 50%),
+    linear-gradient(to top left, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+    rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    inset 0 1px 0px rgba(255, 255, 255, 0.25),
+    0 0 20px rgba(0, 0, 0, 0.6),
+    0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.glass-subtle {
+  background: 
+    linear-gradient(to bottom right, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+    linear-gradient(to top left, rgba(255, 255, 255, 0.02) 0%, transparent 50%),
+    rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(8px) saturate(110%);
+  -webkit-backdrop-filter: blur(8px) saturate(110%);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow:
+    inset 0 1px 0px rgba(255, 255, 255, 0.08),
+    0 0 8px rgba(0, 0, 0, 0.3),
+    0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.glass-dark {
+  background: 
+    linear-gradient(to bottom right, rgba(255, 255, 255, 0.06) 0%, transparent 50%),
+    linear-gradient(to top left, rgba(255, 255, 255, 0.02) 0%, transparent 50%),
+    rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(20px) saturate(130%);
+  -webkit-backdrop-filter: blur(20px) saturate(130%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow:
+    inset 0 1px 0px rgba(255, 255, 255, 0.1),
+    0 0 15px rgba(0, 0, 0, 0.6),
+    0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== Hide Scrollbar (all browsers) ===== */
+html {
+  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;  /* IE / Edge */
+}
+
+html::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari, Opera */
+}
+
+/* ===== Selection ===== */
+::selection {
+  background: rgba(193, 193, 193, 0.25);
+  color: #ffffff;
+}
+
+/* Section reveal animation delay helpers */
+.reveal-delay-1 { animation-delay: 0.1s; }
+.reveal-delay-2 { animation-delay: 0.2s; }
+.reveal-delay-3 { animation-delay: 0.3s; }
+.reveal-delay-4 { animation-delay: 0.4s; }
+.reveal-delay-5 { animation-delay: 0.5s; }
+.reveal-delay-6 { animation-delay: 0.6s; }
