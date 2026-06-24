@@ -26,7 +26,8 @@ A modern, highly interactive, and visually stunning personal portfolio website b
 
 ## 📸 Screenshots
 
-![Uploading portfolio_landing_page.png…]()
+<img width="1920" height="6254" alt="portfolio_landing_page" src="https://github.com/user-attachments/assets/19379d7c-5504-4cc4-888c-40dfa3da66a2" />
+
 
 > **Note:** To update this screenshot, place your own image in the `public/` folder and update the `src` attribute above.
 
