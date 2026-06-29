@@ -7,7 +7,7 @@ interface TimelineItem {
   period: string;
   title: string;
   org: string;
-  description: string;
+  description: string[];
   tags?: string[];
 }
 
@@ -17,24 +17,27 @@ const timeline: TimelineItem[] = [
     period: "2022 — 2026",
     title: "Computer Science",
     org: "RBRU",
-    description:
+    description: [
       "Specialized in Human-Computer Interaction and Advanced Web Technologies.",
+      "Learned and applied fundamental concepts of computer science, including algorithms, data structures, and programming principles.",
+      "Gained practical experience in web development, covering front-end technologies, back-end systems, and database management.",
+    ],
     tags: [
-      "Web Design",
+      "HTML",
+      "CSS",
+      "JavaScript",
       "React",
       "TypeScript",
       "Tailwind CSS",
       "MySQL",
-      "AI",
+      "System Analysis and Design",
+      "Algorithm",
+      "Data Structures",
       "Machine Learning",
       "Digital Image Processing",
       "Python",
       "Java",
       "C++",
-      "SQL",
-      "Html",
-      "CSS",
-      "Tailwind CSS",
     ],
   },
   {
@@ -42,9 +45,25 @@ const timeline: TimelineItem[] = [
     period: "2025 — 2025",
     title: "Frontend Developer",
     org: "Lexnetix Co.,Ltd.",
-    description:
-      "Crafted responsive, accessible interfaces for high-profile clients including e-commerce platforms and content management systems.",
-    tags: ["React", "TypeScript", "Tailwind CSS", "Figma", "Git"],
+    description: [
+      "Government Platform for PDPA Compliance",
+      "Refactor the existing codebase to improve performance and maintainability.",
+      "Build user interface for an administrative web application to support digital government services.",
+      "Develop system for managing personal data protection compliance, handling consent and data processing consent",
+    ],
+    tags: [
+      "React",
+      "TypeScript",
+      "Yup",
+      "TanStack Query",
+      "Axios",
+      "React Hook Form",
+      "Tailwind CSS",
+      "Fluent UI",
+      "Figma",
+      "Git Lab",
+      "Responsive Design",
+    ],
   },
 ];
 
@@ -94,9 +113,16 @@ export default function Experience() {
                   <p className="text-sea-600 font-medium text-sm mb-3 font-mono">
                     @ {item.org}
                   </p>
-                  <p className="text-abyss-500 text-sm leading-relaxed">
-                    {item.description}
-                  </p>
+                  <ul className="list-disc pl-5">
+                    {item.description.map((line) => (
+                      <li
+                        key={line}
+                        className="text-abyss-500 text-sm leading-relaxed"
+                      >
+                        {line}
+                      </li>
+                    ))}
+                  </ul>
 
                   {item.tags && (
                     <div className="flex flex-wrap gap-2 mt-4">

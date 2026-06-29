@@ -24,7 +24,14 @@ const skillCategories: SkillCategory[] = [
   {
     title: "Backend",
     icon: Settings,
-    skills: ["Node.js", "Express", "Prisma ORM", "RESTful APIs"],
+    skills: [
+      "MySQL",
+      "PostgreSQL",
+      "Node.js",
+      "Express",
+      "Prisma ORM",
+      "RESTful APIs",
+    ],
   },
   {
     title: "Design",
@@ -34,7 +41,7 @@ const skillCategories: SkillCategory[] = [
   {
     title: "Tools",
     icon: Wrench,
-    skills: ["VS Code", "Bruno", "Notion"],
+    skills: ["Antigravity", "Git Hub", "Git Lab", "Bruno", "Notion", "Docker"],
   },
 ];
 

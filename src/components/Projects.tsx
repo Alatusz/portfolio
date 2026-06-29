@@ -3,6 +3,7 @@ import { useScrollReveal } from "../hooks/useScrollReveal";
 import SectionHeading from "./SectionHeading";
 import { Github } from "@thesvg/react";
 import WeatherDashboard from "../assets/projects/WeatherDashboard.png";
+import Authentication from "../assets/projects/Authentication.png";
 
 interface Project {
   title: string;
@@ -29,6 +30,23 @@ const projects: Project[] = [
       "A premium weather dashboard featuring real-time data, 7-day forecasts, air quality index, and multi-city comparison with a stunning glassmorphism design.",
     tags: ["React", "TypeScript", "Tailwind", "Playwright"],
     image: WeatherDashboard,
+    github: "#",
+    live: "#",
+  },
+  {
+    title: "Authentication System",
+    description:
+      "A premium authentication system featuring email login, registration, OAuth, email verification, and password recovery",
+    tags: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Playwright",
+      "Node.js",
+      "MySQL",
+      "Prisma",
+    ],
+    image: Authentication,
     github: "#",
     live: "#",
   },

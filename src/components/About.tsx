@@ -45,11 +45,15 @@ export default function About() {
 
             <div className="flex flex-wrap gap-3 pt-2">
               {[
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "Tailwind CSS",
                 "React",
                 "TypeScript",
                 "Node.js",
                 "Next.js",
-                "Tailwind CSS",
+                "MySQL",
                 "PostgreSQL",
               ].map((tag) => (
                 <span
@@ -66,7 +70,7 @@ export default function About() {
           <div className="flex flex-col gap-6">
             <div className="glass rounded-3xl p-7 text-center hover:shadow-xl hover:shadow-sea-300/10 transition-all duration-500 group">
               <div className="text-5xl font-bold bg-gradient-to-r from-sea-500 to-cyan-glow bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300 inline-block">
-                0+
+                1+
               </div>
               <p className="text-abyss-500 text-sm mt-2 font-mono">
                 years_of_experience
@@ -75,7 +79,7 @@ export default function About() {
 
             <div className="glass rounded-3xl p-7 text-center hover:shadow-xl hover:shadow-sea-300/10 transition-all duration-500 group">
               <div className="text-5xl font-bold bg-gradient-to-r from-teal-glow to-sea-400 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300 inline-block">
-                0+
+                3+
               </div>
               <p className="text-abyss-500 text-sm mt-2 font-mono">
                 projects_delivered

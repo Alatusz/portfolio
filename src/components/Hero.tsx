@@ -7,13 +7,13 @@ import { Github, Linkedin } from "@thesvg/react";
 function MacTerminal() {
   const lines = [
     { prompt: true, text: "whoami" },
-    { output: true, text: "creative_developer // full-stack enthusiast" },
+    { output: true, text: "Web Developer // Full-Stack" },
     { prompt: true, text: "cat skills.json | jq .frontend" },
     { output: true, text: '["React", "TypeScript", "Next.js", "Tailwind"]' },
     { prompt: true, text: "echo $PASSION" },
-    { output: true, text: "Building beautiful, performant web experiences" },
+    { output: true, text: "Flying High in the Tech Sky" },
     { prompt: true, text: "uptime --creative" },
-    { output: true, text: "creative_uptime: 6+ years and counting..." },
+    { output: true, text: "creative_uptime: 1+ years and counting..." },
     { prompt: true, text: "" },
   ];
 
@@ -153,10 +153,10 @@ export default function Hero() {
           <div className="flex flex-wrap gap-4">
             <a
               href="#contact"
-              className="group relative px-7 py-3.5 rounded-2xl bg-gradient-to-r from-sea-500 to-abyss-600 text-white font-semibold text-sm overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-sea-500/25 hover:-translate-y-0.5"
+              className="group relative px-7 py-3.5 rounded-2xl bg-gradient-to-r from-rose-500 to-abyss-600 text-white font-semibold text-sm overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-rose-500/25 hover:-translate-y-0.5"
             >
               <span className="relative z-10">Hire me</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-sea-400 to-sea-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-r from-rose-400 to-rose-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </a>
             <a
               href="#projects"
