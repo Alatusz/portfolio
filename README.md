@@ -26,10 +26,8 @@ A modern, highly interactive, and visually stunning personal portfolio website b
 
 ## 📸 Screenshots
 
-<div align="center">
-  <img src="https://placehold.co/800x450/1a1a2e/ffffff?text=Portfolio+Hero+Section" alt="Portfolio Hero" width="800" style="border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); margin-bottom: 20px;" />
-  <p><i>The sleek, modern hero section of the portfolio.</i></p>
-</div>
+<img width="1920" height="6254" alt="portfolio_landing_page" src="https://github.com/user-attachments/assets/19379d7c-5504-4cc4-888c-40dfa3da66a2" />
+
 
 > **Note:** To update this screenshot, place your own image in the `public/` folder and update the `src` attribute above.
 
